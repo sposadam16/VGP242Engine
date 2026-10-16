@@ -3,7 +3,7 @@
 //ALL EXTERNAL STUFF
 
 #define WIN32_LEAN_AND_MEAN // eleminates all unnecessary windows for a smaller build
-#define NOMINAX // removes min/max keywords so we can create those functions
+#define NOMINMAX // removes min/max keywords so we can create those functions
 
 // win 32 headers
 #include <objbase.h>

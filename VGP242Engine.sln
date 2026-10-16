@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "Framework\Core\Core.vcxproj", "{7BAA9A3C-B867-4283-A975-45FE66979D58}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VGP242", "VGP242", "{34F79645-5AE1-4DEB-9075-6673DA1F5772}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01_HelloWindow", "VPG242\01_HelloWindow\01_HelloWindow.vcxproj", "{9246FBBB-3408-41DA-A3E2-648BFF174E40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -35,6 +39,14 @@ Global
 		{7BAA9A3C-B867-4283-A975-45FE66979D58}.Release|x64.Build.0 = Release|x64
 		{7BAA9A3C-B867-4283-A975-45FE66979D58}.Release|x86.ActiveCfg = Release|Win32
 		{7BAA9A3C-B867-4283-A975-45FE66979D58}.Release|x86.Build.0 = Release|Win32
+		{9246FBBB-3408-41DA-A3E2-648BFF174E40}.Debug|x64.ActiveCfg = Debug|x64
+		{9246FBBB-3408-41DA-A3E2-648BFF174E40}.Debug|x64.Build.0 = Debug|x64
+		{9246FBBB-3408-41DA-A3E2-648BFF174E40}.Debug|x86.ActiveCfg = Debug|Win32
+		{9246FBBB-3408-41DA-A3E2-648BFF174E40}.Debug|x86.Build.0 = Debug|Win32
+		{9246FBBB-3408-41DA-A3E2-648BFF174E40}.Release|x64.ActiveCfg = Release|x64
+		{9246FBBB-3408-41DA-A3E2-648BFF174E40}.Release|x64.Build.0 = Release|x64
+		{9246FBBB-3408-41DA-A3E2-648BFF174E40}.Release|x86.ActiveCfg = Release|Win32
+		{9246FBBB-3408-41DA-A3E2-648BFF174E40}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +54,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{5942EE18-789F-4E1C-A0CD-633F6D314785} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{7BAA9A3C-B867-4283-A975-45FE66979D58} = {00A228E9-13B2-40F7-9703-47F888B65863}
+		{9246FBBB-3408-41DA-A3E2-648BFF174E40} = {34F79645-5AE1-4DEB-9075-6673DA1F5772}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E3091D7F-4744-4BB4-BF19-71C4101C7FEC}
