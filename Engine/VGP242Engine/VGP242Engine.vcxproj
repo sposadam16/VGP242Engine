@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Inc\App.h" />
+    <ClInclude Include="Inc\AppState.h" />
     <ClInclude Include="Inc\Common.h" />
     <ClInclude Include="Inc\VGP242Engine.h" />
     <ClInclude Include="Src\Precompiled.h" />
@@ -34,6 +35,12 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Framework\Core\Core.vcxproj">
       <Project>{7baa9a3c-b867-4283-a975-45fe66979d58}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Graphics\Graphics.vcxproj">
+      <Project>{5b4992d7-b426-4c61-ab3f-da774679ab71}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Math\Math.vcxproj">
+      <Project>{2c7f4f1a-26a3-4df1-9379-41b11d6c8d9c}</Project>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">

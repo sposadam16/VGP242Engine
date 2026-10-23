@@ -4,6 +4,7 @@
 
 using namespace VGP242Engine;
 using namespace VGP242Engine::Core;
+using namespace VGP242Engine::Graphics;
 
 void App::Run(const AppConfig& config)
 {
@@ -19,6 +20,8 @@ void App::Run(const AppConfig& config)
 		config.winWidth,
 		config.winHeight
 	);
+	auto handle = myWindow.GetWindowHandle();
+	GraphicsSystem::StaticInitialize(handle, false);
 	//initialize starting state
 
 	// updates
@@ -39,11 +42,20 @@ void App::Run(const AppConfig& config)
 	//termite last state
 
 	// terminate all singletons
-
+	GraphicsSystem::StaticTerminate();
 	myWindow.Terminate();
 }
 	
 void App::Quit()
 {
 	mIsRunning = false;
+}
+
+void App::ChangeState(const std::string& stateName)
+{
+	auto iter = mAppStates.find(stateName);
+	if (iter != mAppStates.end())
+	{
+		mNextState = iter->second.get();
+	}
 }
