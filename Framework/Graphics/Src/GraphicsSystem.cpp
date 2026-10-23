@@ -105,6 +105,16 @@ void GraphicsSystem::Initialize(HWND window, bool fullscreen)
 
     sWindowMessageHandler.Hook(window, GraphicsSystem::GraphicsSystemMessageHandler);
 }
+void GraphicsSystem::Terminate() 
+{
+    sWindowMessageHandler.Unhook();
+
+    SafeRelease(mRenderTargetView);
+    SafeRelease(mDepthStencilView);
+    SafeRelease(mDepthStencilBuffer);
+    SafeRelease(mImmediateContext);
+    SafeRelease(mD3DDevice);
+}
 
 void GraphicsSystem::BeginRender()
 {
