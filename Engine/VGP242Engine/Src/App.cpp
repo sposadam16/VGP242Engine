@@ -5,6 +5,7 @@
 using namespace VGP242Engine;
 using namespace VGP242Engine::Core;
 using namespace VGP242Engine::Graphics;
+using namespace VGP242Engine::Input;
 
 void App::Run(const AppConfig& config)
 {
@@ -22,16 +23,20 @@ void App::Run(const AppConfig& config)
 	);
 	auto handle = myWindow.GetWindowHandle();
 	GraphicsSystem::StaticInitialize(handle, false);
+	InputSystem::StaticInitialize(handle);
 	//initialize starting state
 	ASSERT(mCurrentState != nullptr, "App: no state is set");
 	mCurrentState->Initialize();
+
+	InputSystem* input = InputSystem::Get();
 	// updates
 	mIsRunning = true;
 	while (mIsRunning)
 	{
 		myWindow.ProcessMessage();
+		input->Update();
 		// updating all that need updates
-		if (!myWindow.IsActive())
+		if (!myWindow.IsActive() || input->IsKeyPressed(KeyCode::ESCAPE)) 
 		{
 
 			Quit();
@@ -55,8 +60,8 @@ void App::Run(const AppConfig& config)
 
 		GraphicsSystem* gs = GraphicsSystem::Get();
 		gs->BeginRender();
-		mCurrentState->Render();
-		mCurrentState->DebugUI();
+			mCurrentState->Render();
+			mCurrentState->DebugUI();
 		gs->EndRender();
 	}
 	LOG("App is Terminating");
@@ -64,6 +69,7 @@ void App::Run(const AppConfig& config)
 	mCurrentState->Terminate();
 
 	// terminate all singletons
+	InputSystem::StaticTerminate();
 	GraphicsSystem::StaticTerminate();
 	myWindow.Terminate();
 }

@@ -3,3 +3,8 @@
 
 #include "App.h"
 #include "AppState.h"
+
+namespace VGP242Engine
+{
+	App& MainApp();
+}

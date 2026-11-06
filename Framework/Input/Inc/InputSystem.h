@@ -2,7 +2,7 @@
 
 #include "InputTypes.h"
 
-namespace DEngine::Input
+namespace VGP242Engine::Input
 {
 	class InputSystem final
 	{

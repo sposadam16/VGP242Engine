@@ -1,8 +1,8 @@
 #include "Precompiled.h"
 #include "InputSystem.h"
 
-using namespace DEngine;
-using namespace DEngine::Input;
+using namespace VGP242Engine;
+using namespace VGP242Engine::Input;
 
 namespace
 {
