@@ -43,7 +43,6 @@ void DoColorState::Initialize()
     std::filesystem::path shaderFilePath = L"../../Assets/Shaders/DoColor.fx";
 
     DWORD shaderFlags = D3DCOMPILE_ENABLE_STRICTNESS | D3DCOMPILE_DEBUG;
-
     ID3DBlob* shaderBlob = nullptr;
     ID3DBlob* errorBlob = nullptr;
 
@@ -94,7 +93,6 @@ void DoColorState::Initialize()
     SafeRelease(errorBlob);
 
     //================================================================================
-    //bind pixel shader to shader file
     // Bind pixel shader to shader file.
     hr = D3DCompileFromFile(
         shaderFilePath.c_str(),
