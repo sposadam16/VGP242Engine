@@ -8,56 +8,55 @@ void DoColorState::Initialize()
     //setup camera
 	mCamera.SetPosition({ 0.0f, 1.0f, -3.0f });
 	mCamera.SetLookAt({ 0.0f, 0.0f, 0.0f });
-    // Cube centered at the local origin: 6 faces, 2 clockwise triangles per face.
     mVertices.clear();
 
     // Front (-Z)
     mVertices.push_back({ { -0.5f, -0.5f, -0.5f }, Colors::Red });
     mVertices.push_back({ { -0.5f, 0.5f, -0.5f }, Colors::Red });
     mVertices.push_back({ { 0.5f, 0.5f, -0.5f }, Colors::Red });
-    mVertices.push_back({ { -0.5f, -0.5f, -0.5f }, Colors::Red });
-    mVertices.push_back({ { 0.5f, 0.5f, -0.5f }, Colors::Red });
-    mVertices.push_back({ { 0.5f, -0.5f, -0.5f }, Colors::Red });
+    mVertices.push_back({ { -0.5f, -0.5f, -0.5f }, Colors::White });
+    mVertices.push_back({ { 0.5f, 0.5f, -0.5f }, Colors::White });
+    mVertices.push_back({ { 0.5f, -0.5f, -0.5f }, Colors::White });
 
     // Back (+Z)
     mVertices.push_back({ { 0.5f, -0.5f, 0.5f }, Colors::Cyan });
     mVertices.push_back({ { 0.5f, 0.5f, 0.5f }, Colors::Cyan });
     mVertices.push_back({ { -0.5f, 0.5f, 0.5f }, Colors::Cyan });
-    mVertices.push_back({ { 0.5f, -0.5f, 0.5f }, Colors::Cyan });
-    mVertices.push_back({ { -0.5f, 0.5f, 0.5f }, Colors::Cyan });
-    mVertices.push_back({ { -0.5f, -0.5f, 0.5f }, Colors::Cyan });
+    mVertices.push_back({ { 0.5f, -0.5f, 0.5f }, Colors::Brown });
+    mVertices.push_back({ { -0.5f, 0.5f, 0.5f }, Colors::Brown });
+    mVertices.push_back({ { -0.5f, -0.5f, 0.5f }, Colors::Brown });
 
     // Left (-X)
     mVertices.push_back({ { -0.5f, -0.5f, 0.5f }, Colors::Lime });
     mVertices.push_back({ { -0.5f, 0.5f, 0.5f }, Colors::Lime });
     mVertices.push_back({ { -0.5f, 0.5f, -0.5f }, Colors::Lime });
-    mVertices.push_back({ { -0.5f, -0.5f, 0.5f }, Colors::Lime });
-    mVertices.push_back({ { -0.5f, 0.5f, -0.5f }, Colors::Lime });
-    mVertices.push_back({ { -0.5f, -0.5f, -0.5f }, Colors::Lime });
+    mVertices.push_back({ { -0.5f, -0.5f, 0.5f }, Colors::Purple });
+    mVertices.push_back({ { -0.5f, 0.5f, -0.5f }, Colors::Purple });
+    mVertices.push_back({ { -0.5f, -0.5f, -0.5f }, Colors::Purple });
 
     // Right (+X)
     mVertices.push_back({ { 0.5f, -0.5f, -0.5f }, Colors::Magenta });
     mVertices.push_back({ { 0.5f, 0.5f, -0.5f }, Colors::Magenta });
     mVertices.push_back({ { 0.5f, 0.5f, 0.5f }, Colors::Magenta });
-    mVertices.push_back({ { 0.5f, -0.5f, -0.5f }, Colors::Magenta });
-    mVertices.push_back({ { 0.5f, 0.5f, 0.5f }, Colors::Magenta });
-    mVertices.push_back({ { 0.5f, -0.5f, 0.5f }, Colors::Magenta });
+    mVertices.push_back({ { 0.5f, -0.5f, -0.5f }, Colors::Gray });
+    mVertices.push_back({ { 0.5f, 0.5f, 0.5f }, Colors::Gray });
+    mVertices.push_back({ { 0.5f, -0.5f, 0.5f }, Colors::Gray });
 
     // Top (+Y)
     mVertices.push_back({ { -0.5f, 0.5f, -0.5f }, Colors::Blue });
     mVertices.push_back({ { -0.5f, 0.5f, 0.5f }, Colors::Blue });
     mVertices.push_back({ { 0.5f, 0.5f, 0.5f }, Colors::Blue });
-    mVertices.push_back({ { -0.5f, 0.5f, -0.5f }, Colors::Blue });
-    mVertices.push_back({ { 0.5f, 0.5f, 0.5f }, Colors::Blue });
-    mVertices.push_back({ { 0.5f, 0.5f, -0.5f }, Colors::Blue });
+    mVertices.push_back({ { -0.5f, 0.5f, -0.5f }, Colors::Pink });
+    mVertices.push_back({ { 0.5f, 0.5f, 0.5f }, Colors::Pink });
+    mVertices.push_back({ { 0.5f, 0.5f, -0.5f }, Colors::Pink });
 
     // Bottom (-Y)
     mVertices.push_back({ { -0.5f, -0.5f, 0.5f }, Colors::Yellow });
     mVertices.push_back({ { -0.5f, -0.5f, -0.5f }, Colors::Yellow });
     mVertices.push_back({ { 0.5f, -0.5f, -0.5f }, Colors::Yellow });
-    mVertices.push_back({ { -0.5f, -0.5f, 0.5f }, Colors::Yellow });
-    mVertices.push_back({ { 0.5f, -0.5f, -0.5f }, Colors::Yellow });
-    mVertices.push_back({ { 0.5f, -0.5f, 0.5f }, Colors::Yellow });
+    mVertices.push_back({ { -0.5f, -0.5f, 0.5f }, Colors::Orange });
+    mVertices.push_back({ { 0.5f, -0.5f, -0.5f }, Colors::Orange });
+    mVertices.push_back({ { 0.5f, -0.5f, 0.5f }, Colors::Orange });
 
     mMeshBuffer.Initialize(mVertices.data(), sizeof(VertexPC), static_cast<uint32_t>(mVertices.size()));
     std::filesystem::path shaderPath = L"../../Assets/Shaders/DoTransform.fx";
