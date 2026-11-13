@@ -5,12 +5,21 @@ using namespace VGP242Engine::Input;
 
 void DoColorState::Initialize()
 {
+    // srand
     //setup camera
 	mCamera.SetPosition({ 0.0f, 1.0f, -3.0f });
 	mCamera.SetLookAt({ 0.0f, 0.0f, 0.0f });
 
-	MeshPC cube = MeshBuilder::CreateCubePC(1.0f, Colors::Red);
-    mMeshBuffer.Initialize(cube);
+	//MeshPC cube = MeshBuilder::CreateCubePC(1.0f, Colors::Red);
+	//MeshPC cube = MeshBuilder::CreateCubePC(1.0f);
+	//MeshPC rectangle = MeshBuilder::CreateRectanglePC(1.0f, 2.0f, 0.5f);
+	//MeshPC mesh = MeshBuilder::CreatePlanePC(10, 10, 0.5f, true);
+	//MeshPC mesh = MeshBuilder::CreateCylinderPC(20, 20);
+	MeshPC mesh = MeshBuilder::CreateSpherePC(3000, 3000, 1.0f);
+    //mMeshBuffer.Initialize(mesh);
+    mMeshBuffer.Initialize(mesh);
+    //mMeshBuffer.Initialize(rectangle);
+    //mMeshBuffer.Initialize(cube);
     std::filesystem::path shaderPath = L"../../Assets/Shaders/DoTransform.fx";
     mVertexShader.Initialize<VertexPC>(shaderPath);
     mPixelShader.Initialize(shaderPath);
