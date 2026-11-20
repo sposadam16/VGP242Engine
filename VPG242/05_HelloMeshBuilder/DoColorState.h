@@ -11,6 +11,8 @@ public:
     void Terminate() override;
 
 private:
+    void CreateCurrentMesh();
+    int mShapeIndex = 0;
 
 	VGP242Engine::Graphics::MeshBuffer mMeshBuffer;
 	VGP242Engine::Graphics::VertexShader mVertexShader;
